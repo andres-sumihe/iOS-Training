@@ -8,21 +8,15 @@
 import UIKit
 
 
-
 class DTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var tableView: UITableView!
     
-    let data = [
-        ("Name", "Andres Freixa Sumihe"),
-        ("Email", "andres_sumihe@bca.co.id"),
-        ("Phone", "085156005454"),
-        ("Job", "iOS Developer"),
-        ("Company", "PT Bank Central Asia, Tbk")
-    ]
+    
+    var employees: [Employee] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView = UITableView(frame: view.bounds)
         tableView.delegate = self
         tableView.dataSource = self
@@ -30,18 +24,30 @@ class DTableViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "profileTableCell")
 
         view.addSubview(tableView)
+        
+        fetchEmployees { result in
+            switch result {
+                
+            case .success(let employees):
+                self.employees = employees
+                self.tableView.reloadData()
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return data.count
-        }
+        return employees.count
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileTableCell", for: indexPath) as! ProfileTableViewCell
 
-        let (title, description) = data[indexPath.row]
-        cell.titleComponent.text = title
-        cell.descriptionComponent.text = description
+        let employee = employees[indexPath.row]
+        cell.titleComponent.text = employee.employee_name
+        cell.descriptionComponent.text = "Salary: \(employee.employee_salary)"
+        cell.ageComponent.text = "\(employee.employee_age) Tahun"
 
         return cell
     }

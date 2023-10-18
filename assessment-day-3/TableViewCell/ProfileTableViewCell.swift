@@ -28,6 +28,7 @@ class ProfileTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleComponent: UILabel!
     @IBOutlet weak var descriptionComponent: UILabel!
+    @IBOutlet weak var ageComponent: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
