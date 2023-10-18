@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qMj-eP-Odr">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="training" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="IDL-ZB-DIj">
+                                <rect key="frame" x="-58" y="0.0" width="505.00000000000023" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Satoru Gojo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5hW-4F-srC">
+                                <rect key="frame" x="108.77636033979559" y="35" width="172.99999999999989" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="36"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="x7i-D1-1tl">
+                                <rect key="frame" x="155.9271294572502" y="746.00000000000011" width="80" height="32"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Read" buttonSize="large">
+                                    <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                    <color key="baseBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="WGU-fV-t36" kind="show" identifier="TabController" destinationCreationSelector="TabControllerSelector" id="m6k-PK-Kaa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <size key="freeformSize" width="393" height="852"/>
+                    <connections>
+                        <outlet property="ReadBtn" destination="x7i-D1-1tl" id="0wH-wY-GwX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2447" y="-27"/>
+        </scene>
+        <!--Photos-->
+        <scene sceneID="YFU-8a-bQ3">
+            <objects>
+                <viewController id="6ro-bb-vP6" customClass="ImageViewController" customModule="training" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2sB-ov-Mci">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" fixedFrame="YES" canCancelContentTouches="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YWZ-Va-B7u">
+                                <rect key="frame" x="0.0" y="88" width="385" height="658"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eH2-h2-azx">
+                                    <size key="itemSize" width="141" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vCG-bZ-VXW"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Photos" image="photo.tv" catalog="system" id="Oyp-E3-xa3">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Icq-Rd-HQU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-763" y="329"/>
+        </scene>
+        <!--Biography-->
+        <scene sceneID="H7L-Vu-igr">
+            <objects>
+                <viewController id="WdL-Qw-iyu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HTC-bx-MHC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="dmN-qm-W6x">
+                                <rect key="frame" x="26" y="20" width="341" height="754"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Who is Gojo?  Satoru Gojo (Japanese: 五条 悟, Hepburn: Gojō Satoru) is a fictional character from Gege Akutami's manga Jujutsu Kaisen. He was first introduced in Akutami's short series Tokyo Metropolitan Curse Technical School as the mentor of the cursed teenager Yuta Okkotsu at Tokyo Prefectural Jujutsu High School. This miniseries became the prequel Jujutsu Kaisen 0 of Jujutsu Kaisen. In Jujutsu Kaisen, Gojo takes the same role but mentors the student Yuji Itadori who suffers a similar Curse, helping him become stronger while protecting other characters in the series.
+
+Gege Akutami created Gojo to be a strong, but likeable, character who is keen on his students. He is voiced by Yūichi Nakamura in Japanese and Kaiji Tang in English in the animated adaptations by MAPPA.
+
+The character was well received by the media for his carefree nature and power shown when protecting his students, becoming the series’s breakout character. Furthermore, his role in the prequel Jujutsu Kaisen 0 was appreciated by the media due to his hidden depths such as his relationship with the antagonist Suguru Geto.  Creation and conception 
+Gege Akutami created Satoru Gojo with the idea of being one of the strongest characters in the entire series but at the same time being easy to understand to the readers. One of Gojo's key ideas for his design is a blindfold he wears. Thanks to his supernatural powers, he can still see. His eyes, the 6 Eyes, were primarily used to encounter Curses.[4] In his debut in Jujutsu Kaisen 0, Akutami linked Gojo and Yuta Okkotsu to Michizane Sugawara, a famous figure in Japanese history, to explain from whom both characters inherited their supernatural powers. This was done as a tribute to his late editor, Yamanaka. Gojo's design is meant to be the one of a handsome man, often called bishonen while his facial design was inspired by a minor Naruto character whose face was covered in bandages.[5] Despite such looks, Akutami feels unable to write Gojo in a romantic relationship with a woman due to the work of being faithful towards her. In regards to Gojo's relationship with his students, most notably Yuji Itadori and Yuta Okkotsu, Akutami wrote their relationship simply as he claims Gojo only wants troublemakers to become strong. In Japan, it is common for people to call each other through their last names rather than their given names. However, Gojo calls each of his students by their first names. Akutami said he made this decision because he saw Gojo did not have proper consideration for such social traditions.[4]
+
+Sunghoo Park, who directed the first season of the series' anime adaptation as well as the new prequel movie, said adapting one of Gojo's early scenes involving the Domain Expansion scene in the season was a particularly tough one to get just right. Nevertheless, he saw such a sequence as memorable. Since the original scene was black and white, Park and his team consulted Akutami for guidance about how the colors from Gojo's Domain Expansion should be.[6] In regards to the animated movie, Park stated that while "The highlight of the movie is of course, the story of Okkotsu and Rika as the main characters of Jujutsu Kaisen 0" at the same time, he wanted to focus on more characters from the manga, most notably the past relationship between Gojo and Geto, which was explored briefly in the original manga.[7] Seko was requested by the director to feature a new fight scene between Gojo and Miguel in the climax.[8]
+
+The song "Where Our Blue Is" by Tatsuya Kitani which acts as the opening of the anime's second season deals with the youth of Gojo and Geto with an emphasis on blue backgrounds like the lyrics say. The opening contrasts the ending theme "Light" which uses a more relaxed melody which also makes emphasis on Gojo and Geto's friendship.[9]</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tLP-h2-YO7"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Biography" id="xYm-m5-pxA">
+                        <imageReference key="image" image="book.pages" catalog="system" symbolScale="default" renderingMode="template"/>
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gMa-UO-pob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-763" y="-321"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="e7G-ng-qxg">
+            <objects>
+                <tabBarController id="WGU-fV-t36" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="D1k-1d-qkc"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="1do-rD-fbN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="WdL-Qw-iyu" kind="relationship" relationship="viewControllers" id="OWg-vZ-b6Q"/>
+                        <segue destination="6ro-bb-vP6" kind="relationship" relationship="viewControllers" id="Jbg-ul-mcj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Say-xf-mJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1682" y="-18"/>
+        </scene>
+        <!--Image Page Controller-->
+        <scene sceneID="b1f-TS-Mj7">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="vertical" spineLocation="none" id="qMj-eP-Odr" customClass="ImagePageController" customModule="training" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Hp-TU-010" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1721" y="1607"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Qqa-PG-wIq">
+            <objects>
+                <viewController storyboardIdentifier="viewID1" id="Apm-tr-0sO" customClass="DTableViewController" customModule="training" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cih-bU-W64">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Halaman 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-13-OFk">
+                                <rect key="frame" x="154.59740478143738" y="415.5320543507471" width="78.999999999964871" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Uim-nW-hLc">
+                                <rect key="frame" x="4" y="97" width="385" height="658"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="alR-f6-cbf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="TableComponent" destination="Uim-nW-hLc" id="Pp3-3w-kVR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6NP-lj-BRm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-848" y="1607"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Oyl-uo-ug2">
+            <objects>
+                <viewController storyboardIdentifier="viewID2" id="7jz-sm-CFx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M8A-cO-H4P">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Halaman 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSe-5J-bRs">
+                                <rect key="frame" x="155.44908955740129" y="415.74033169285462" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7Mh-pT-2gs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rob-dv-1V8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="1607"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="b8L-mN-91A">
+            <objects>
+                <viewController storyboardIdentifier="viewID4" id="0kO-V2-qJd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="69x-3Q-4Nb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Halaman 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0c-RU-3Wo">
+                                <rect key="frame" x="155.15927368518373" y="416.24466495748266" width="82" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cPB-HS-qpc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRm-tv-YFt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1682" y="1607"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="36A-3x-G1X">
+            <objects>
+                <viewController storyboardIdentifier="viewID3" id="Pt9-L3-wJt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fFs-kL-oAf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Halaman 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZG0-HY-np7">
+                                <rect key="frame" x="154.27609742736479" y="416.98570170313712" width="82" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Axp-7f-ToW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K6x-JU-2Yu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="865" y="1607"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Image" width="736" height="1413"/>
+        <image name="book.pages" catalog="system" width="107" height="128"/>
+        <image name="photo.tv" catalog="system" width="128" height="95"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
