@@ -186,29 +186,20 @@ The song "Where Our Blue Is" by Tatsuya Kitani which acts as the opening of the 
             </objects>
             <point key="canvasLocation" x="-848" y="1607"/>
         </scene>
-        <!--View Controller-->
+        <!--Employee Table View Controller-->
         <scene sceneID="Oyl-uo-ug2">
             <objects>
-                <viewController storyboardIdentifier="viewID2" id="7jz-sm-CFx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewID2" id="7jz-sm-CFx" customClass="EmployeeTableViewController" customModule="training" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M8A-cO-H4P">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Halaman 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSe-5J-bRs">
-                                <rect key="frame" x="155.44908955740129" y="415.74033169285462" width="81" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7Mh-pT-2gs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rob-dv-1V8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="1607"/>
+            <point key="canvasLocation" x="32.824427480916029" y="1606.3380281690143"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="b8L-mN-91A">
