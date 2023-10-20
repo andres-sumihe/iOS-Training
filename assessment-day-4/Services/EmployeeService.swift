@@ -45,15 +45,29 @@ class EmployeeService: NSObject {
         do {
             let result = try managedContext.fetch(fetchRequest) as! [NSManagedObject]
             result.forEach{ employee in
-                employees.append(
-                    EmployeeModel(
-                        id: employee.value(forKey: "id") as! Int,
-                        employee_name: employee.value(forKey: "employee_name") as! String,
-                        employee_salary: employee.value(forKey: "employee_salary") as! Int,
-                        employee_age: employee.value(forKey: "employee_age") as! Int,
-                        profile_image: employee.value(forKey: "profile_image") as! String
+                if let id = employee.value(forKey: "id") as? UUID {
+                    employees.append(
+                        EmployeeModel(
+                            id: employee.value(forKey: "id") as! UUID,
+                            employee_name: employee.value(forKey: "employee_name") as! String,
+                            employee_salary: employee.value(forKey: "employee_salary") as! Int,
+                            employee_age: employee.value(forKey: "employee_age") as! Int,
+                            profile_image: employee.value(forKey: "profile_image") as! String
+                        )
                     )
-                )
+                } else {
+                    let newID = UUID()
+                    employees.append(
+                        EmployeeModel(
+                            id: newID ,
+                            employee_name: employee.value(forKey: "employee_name") as! String,
+                            employee_salary: employee.value(forKey: "employee_salary") as! Int,
+                            employee_age: employee.value(forKey: "employee_age") as! Int,
+                            profile_image: employee.value(forKey: "profile_image") as! String
+                        )
+                    )
+                }
+                
             }
             print(result)
         } catch let err {
