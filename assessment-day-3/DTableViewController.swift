@@ -12,7 +12,7 @@ class DTableViewController: UIViewController, UITableViewDataSource, UITableView
     var tableView: UITableView!
     
     
-    var employees: [EmployeeModel] = []
+    var employees: [EmployeeModelAPI] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
