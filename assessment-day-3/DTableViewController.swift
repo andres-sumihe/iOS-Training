@@ -10,6 +10,8 @@ import UIKit
 
 class DTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var tableView: UITableView!
+    var titleLabel: UILabel!
+    var stackView: UIStackView!
     
     
     var employees: [EmployeeModelAPI] = []
@@ -18,12 +20,35 @@ class DTableViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         
         tableView = UITableView(frame: view.bounds)
+        titleLabel = UILabel(frame: view.bounds)
+        
         tableView.delegate = self
         tableView.dataSource = self
 
         tableView.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "profileTableCell")
+        
+        titleLabel.text = "Assessment Day 3"
+        titleLabel.textAlignment = .center
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        stackView = UIStackView(frame: view.bounds)
+        stackView.axis = .vertical
+        stackView.spacing = 8 // Adjust the spacing as needed
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(tableView)
 
-        view.addSubview(tableView)
+        view.addSubview(stackView)
+        
+        let guide = view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            titleLabel.heightAnchor.constraint(equalToConstant: 50),
+            stackView.topAnchor.constraint(equalTo: guide.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
+        ])
         
         fetchEmployees { result in
             switch result {

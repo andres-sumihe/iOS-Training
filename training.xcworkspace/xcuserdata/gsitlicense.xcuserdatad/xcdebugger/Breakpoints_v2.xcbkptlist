@@ -30,15 +30,10 @@
             filePath = "assessment-day-4/View/EmployeeTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-<<<<<<< HEAD
-            landmarkName = "EmployeeTableViewController"
-            landmarkType = "3">
-=======
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
->>>>>>> 789552b44921f3216f9eb1d9e717b93cfda105f0
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -51,8 +46,8 @@
             filePath = "assessment-day-4/View/EmployeeTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>

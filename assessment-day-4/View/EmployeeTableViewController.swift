@@ -13,6 +13,8 @@ class EmployeeTableViewController: UIViewController,  UITableViewDataSource, UIT
     var tableView: UITableView!
     var button: UIButton!
     var stackView: UIStackView!
+    var titleLabel: UILabel!
+    
     let empService: EmployeeService = EmployeeService()
     
 //    var employees: [EmployeeModel] = []
@@ -27,6 +29,7 @@ class EmployeeTableViewController: UIViewController,  UITableViewDataSource, UIT
         
         tableView = UITableView(frame: view.bounds)
         button = UIButton(frame: view.bounds)
+        titleLabel = UILabel(frame: view.bounds)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Add Data", for: .normal)
@@ -39,10 +42,17 @@ class EmployeeTableViewController: UIViewController,  UITableViewDataSource, UIT
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "profileTableCell")
         
+        
+        titleLabel.text = "Assessment Day 4"
+        titleLabel.textAlignment = .center
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         stackView = UIStackView(frame: view.bounds)
         stackView.axis = .vertical
         stackView.spacing = 8 // Adjust the spacing as needed
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(tableView)
         stackView.addArrangedSubview(button)
         
@@ -50,6 +60,7 @@ class EmployeeTableViewController: UIViewController,  UITableViewDataSource, UIT
         
         let guide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
+            titleLabel.heightAnchor.constraint(equalToConstant: 50), // Set the desired height
             button.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
             button.heightAnchor.constraint(equalToConstant: 50),
             stackView.topAnchor.constraint(equalTo: guide.topAnchor),
