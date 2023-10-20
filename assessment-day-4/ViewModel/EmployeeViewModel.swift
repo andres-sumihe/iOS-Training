@@ -30,15 +30,15 @@ class EmployeeViewModel: NSObject {
         print(self.employeeData.count)
     }
     
-    func fetchData() {
-        print(self.employeeData.count)
-        apiService.fetchEmployees { result in
-            switch result {
-                case .success(let employees):
-                    self.employeeData = employees
-                case .failure(let error):
-                    print("Error: \(error)")
-            }
-        }
-    }
+//    func fetchData() {
+//        print(self.employeeData.count)
+//        apiService.fetchEmployees { result in
+//            switch result {
+//                case .success(let employees):
+//                    self.employeeData = employees
+//                case .failure(let error):
+//                    print("Error: \(error)")
+//            }
+//        }
+//    }
 }

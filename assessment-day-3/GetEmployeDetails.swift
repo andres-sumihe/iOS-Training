@@ -1,7 +1,7 @@
 import Alamofire
 
 let baseUrl = UserDefaults.standard.value(forKey: "base_url") ?? ""
-func fetchEmployees(completion: @escaping (Result<[EmployeeModel], Error>) -> Void) {
+func fetchEmployees(completion: @escaping (Result<[EmployeeModelAPI], Error>) -> Void) {
     let apiURL = "/employees"
 
     AF.request("\(baseUrl)\(apiURL)").responseDecodable(of: EmployeeResponse.self) { response in
@@ -18,9 +18,5 @@ func fetchEmployees(completion: @escaping (Result<[EmployeeModel], Error>) -> Vo
     }
 }
 
-struct EmployeeResponse: Codable {
-    let status: String
-    let data: [EmployeeModel]?
-    let message: String
-}
+
 

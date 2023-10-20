@@ -48,10 +48,9 @@ class EmployeeTableViewController: UIViewController,  UITableViewDataSource, UIT
         
         view.addSubview(stackView)
         
-        
         let guide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
-            button.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: 20),
+            button.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
             button.heightAnchor.constraint(equalToConstant: 50),
             stackView.topAnchor.constraint(equalTo: guide.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
@@ -124,8 +123,11 @@ class EmployeeTableViewController: UIViewController,  UITableViewDataSource, UIT
                let age = Int(ageField.text!) {
                 
                 
+                let uuidString = self.viewModel.employeeData[indexPath.row].id.uuidString
+
                 let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Employee")
-                fetchRequest.predicate = NSPredicate(format: "id == %id", self.viewModel.employeeData[indexPath.row].id)
+                fetchRequest.predicate = NSPredicate(format: "id == %@", uuidString)
+
                 
                 // Update the employee object with the edited data
                 do {
@@ -150,28 +152,19 @@ class EmployeeTableViewController: UIViewController,  UITableViewDataSource, UIT
             }
         })
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+            // Handle the delete action here
             let managedContext = self.appDelegate.persistentContainer.viewContext
+            let uuidString = self.viewModel.employeeData[indexPath.row].id.uuidString
+
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Employee")
-            fetchRequest.predicate = NSPredicate(format: "id == %id", self.viewModel.employeeData[indexPath.row].id)
+            fetchRequest.predicate = NSPredicate(format: "id == %@", uuidString)
 
             do {
                 let result = try managedContext.fetch(fetchRequest)
                 
                 if let objectToDelete = result.first as? NSManagedObject {
                     managedContext.delete(objectToDelete)
-                    
                     do {
                         try managedContext.save()
                     } catch {
@@ -183,12 +176,20 @@ class EmployeeTableViewController: UIViewController,  UITableViewDataSource, UIT
             } catch let error {
                 print("Error fetching data: \(error)")
             }
+            self.viewModel.loadDataFromLocalDB()
+            self.tableView.reloadData()
             
             // Delete the row from the table view
-            tableView.deleteRows(at: [indexPath], with: .fade)
         }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
-
     
 
     @IBAction func addButtonTapped(_ sender: UIButton) {
@@ -222,6 +223,7 @@ class EmployeeTableViewController: UIViewController,  UITableViewDataSource, UIT
                 // Create a new Employee managed object and set its attributes
                 if let employeeEntity = NSEntityDescription.entity(forEntityName: "Employee", in: managedContext!),
                    let newEmployee = NSManagedObject(entity: employeeEntity, insertInto: managedContext) as? Employee {
+                    newEmployee.id = UUID()
                     newEmployee.employee_name = name
                     newEmployee.employee_salary = Int64(salary)
                     newEmployee.employee_age = Int64(age)

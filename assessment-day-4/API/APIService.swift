@@ -12,7 +12,7 @@ class APIService {
     
     let baseUrl = UserDefaults.standard.value(forKey: "base_url") ?? ""
     
-    func fetchEmployees(completion: @escaping (Result<[EmployeeModel], Error>) -> Void) {
+    func fetchEmployees(completion: @escaping (Result<[EmployeeModelAPI], Error>) -> Void) {
         let apiURL = "/employees"
 
         AF.request("\(baseUrl)\(apiURL)").responseDecodable(of: EmployeeResponse.self) { response in
