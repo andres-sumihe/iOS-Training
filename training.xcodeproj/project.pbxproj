@@ -11,7 +11,6 @@
 		B23B87922AE0CD86002815B5 /* EmployeeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23B87902AE0CD86002815B5 /* EmployeeTableCell.swift */; };
 		B23B87932AE0CD86002815B5 /* EmployeeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23B87912AE0CD86002815B5 /* EmployeeTableCell.xib */; };
 		B23B87982AE0CF68002815B5 /* EmployeeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23B87972AE0CF68002815B5 /* EmployeeTableViewController.swift */; };
-		B23B879C2AE0E3EF002815B5 /* LocalStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B23B879A2AE0E3EF002815B5 /* LocalStorage.xcdatamodeld */; };
 		B23B87A02AE105E3002815B5 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23B879F2AE105E3002815B5 /* EmployeeModel.swift */; };
 		B23B87A52AE10795002815B5 /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23B87A42AE10795002815B5 /* EmployeeViewModel.swift */; };
 		B23B87A72AE10862002815B5 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23B87A62AE10862002815B5 /* APIService.swift */; };
@@ -63,7 +62,6 @@
 		B23B87902AE0CD86002815B5 /* EmployeeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableCell.swift; sourceTree = "<group>"; };
 		B23B87912AE0CD86002815B5 /* EmployeeTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableCell.xib; sourceTree = "<group>"; };
 		B23B87972AE0CF68002815B5 /* EmployeeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewController.swift; sourceTree = "<group>"; };
-		B23B879B2AE0E3EF002815B5 /* Employee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Employee.xcdatamodel; sourceTree = "<group>"; };
 		B23B879F2AE105E3002815B5 /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
 		B23B87A42AE10795002815B5 /* EmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewModel.swift; sourceTree = "<group>"; };
 		B23B87A62AE10862002815B5 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 				B2A8E1272ADFBB1600965282 /* API */,
 				B2BD23B02AD792BD0024961E /* AppDelegate.swift */,
 				B2BD23FC2AD93CFE0024961E /* ImageCollectionViewCell */,
-				B23B879A2AE0E3EF002815B5 /* LocalStorage.xcdatamodeld */,
 				B2BD23B22AD792BD0024961E /* SceneDelegate.swift */,
 				B2BD23B42AD792BD0024961E /* ViewController.swift */,
 				B2BD23B62AD792BD0024961E /* Main.storyboard */,
@@ -479,7 +476,6 @@
 			files = (
 				B2BD23EE2AD92A1F0024961E /* ReadTabControllerViewController.swift in Sources */,
 				B2A8E12B2ADFBDCE00965282 /* GetEmployeDetails.swift in Sources */,
-				B23B879C2AE0E3EF002815B5 /* LocalStorage.xcdatamodeld in Sources */,
 				B2BD23B52AD792BD0024961E /* ViewController.swift in Sources */,
 				B2BD23BB2AD792BD0024961E /* training.xcdatamodeld in Sources */,
 				B2A8E1292ADFBB4300965282 /* GetCharacterDetail.swift in Sources */,
@@ -845,16 +841,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B23B879A2AE0E3EF002815B5 /* LocalStorage.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B23B879B2AE0E3EF002815B5 /* Employee.xcdatamodel */,
-			);
-			currentVersion = B23B879B2AE0E3EF002815B5 /* Employee.xcdatamodel */;
-			path = LocalStorage.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		B2BD23B92AD792BD0024961E /* training.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
